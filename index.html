@@ -28,7 +28,7 @@
             --text-muted: #64748b;
             --danger: #ef4444;
             --whatsapp: #25D366;
-            --telegram: #0088cc;
+            --telegram: #25D366;  /* Replaced with WhatsApp green */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -356,13 +356,13 @@
             transform: none;
         }
 
-        /* Telegram Button */
-        .btn-telegram {
+        /* WhatsApp Button (replacing Telegram) */
+        .btn-whatsapp {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 8px 16px;
-            background: var(--telegram);
+            background: var(--whatsapp);
             border: none;
             border-radius: 8px;
             color: #fff;
@@ -372,24 +372,25 @@
             transition: all 0.2s;
         }
         
-        .btn-telegram:hover {
+        .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
         }
 
-        .btn-telegram svg {
+        .btn-whatsapp svg {
             width: 18px;
             height: 18px;
+            fill: #fff;
         }
 
-        /* Telegram Contact Bar */
+        /* WhatsApp Contact Bar (replacing Telegram) */
         .wa-contact-bar {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 136, 204, 0.1);
-            border: 1px solid rgba(0, 136, 204, 0.2);
+            background: rgba(37, 211, 102, 0.1);
+            border: 1px solid rgba(37, 211, 102, 0.2);
             border-radius: 12px;
             padding: 12px 16px;
             margin-top: 20px;
@@ -404,12 +405,12 @@
         }
 
         .contact-row span {
-            color: var(--telegram);
+            color: var(--whatsapp);
             font-weight: 600;
         }
 
         .contact-row a {
-            color: var(--telegram);
+            color: var(--whatsapp);
             text-decoration: none;
             font-weight: 700;
         }
@@ -418,38 +419,38 @@
             text-decoration: underline;
         }
 
-        .telegram-row {
+        .whatsapp-row {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             width: 100%;
             padding-top: 8px;
-            border-top: 1px solid rgba(0, 136, 204, 0.2);
+            border-top: 1px solid rgba(37, 211, 102, 0.2);
         }
 
-        .telegram-row span {
-            color: var(--telegram);
+        .whatsapp-row span {
+            color: var(--whatsapp);
             font-weight: 600;
         }
 
-        .telegram-row a {
-            color: var(--telegram);
+        .whatsapp-row a {
+            color: var(--whatsapp);
             text-decoration: none;
             font-weight: 700;
         }
 
-        .telegram-row a:hover {
+        .whatsapp-row a:hover {
             text-decoration: underline;
         }
 
-        .telegram-icon {
+        .whatsapp-icon {
             width: 18px;
             height: 18px;
-            fill: var(--telegram);
+            fill: var(--whatsapp);
         }
 
-        /* Telegram Floating Button */
+        /* WhatsApp Floating Button (replacing Telegram) */
         .float-whatsapp {
             position: fixed;
             bottom: 100px;
@@ -463,15 +464,15 @@
             justify-content: center;
             width: 56px;
             height: 56px;
-            background: var(--telegram);
+            background: var(--whatsapp);
             border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             transition: all 0.2s;
         }
 
         .float-whatsapp a:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
         }
 
         .float-whatsapp svg {
@@ -1786,14 +1787,14 @@
             </div>
         </header>
 
-        <!-- Telegram Contact Bar -->
+        <!-- WhatsApp Contact Bar (replaces Telegram) -->
         <div class="wa-contact-bar">
             <div class="contact-row">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--telegram)">
-                    <path d="M12 2C6.477 2 2 6.477 2 12C2 14.167 2.695 16.208 3.904 17.848L2.4 22L7.152 20.496C8.792 21.305 10.733 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM17.5 14.375C17.43 14.542 16.73 15.356 16.3 15.8C15.87 16.244 15.58 16.267 15.337 16.3C15.093 16.333 13.567 15.933 11.667 15.15C9.643 14.329 8.243 12.879 7.97 12.571C7.697 12.263 7.424 11.97 7.63 11.692C7.79 11.472 8.01 11.164 8.169 11C8.328 10.836 8.397 10.714 8.5 10.514C8.603 10.314 8.55 10.229 8.47 10.063C8.39 9.897 7.973 8.868 7.78 8.4C7.587 7.932 7.38 8.001 7.214 8.009C7.047 8.017 6.84 8.014 6.634 8.014C6.427 8.014 6.137 8.083 5.864 8.4C5.59 8.717 4.8 9.479 4.8 10.959C4.8 12.439 5.897 13.918 6.056 14.129C6.216 14.34 8.038 17.156 10.79 18.257C13.541 19.358 13.801 19.349 14.359 19.297C14.918 19.245 16.143 18.784 16.39 18.067C16.637 17.35 16.637 16.758 16.568 16.636C16.498 16.514 15.352 16.315 15.176 16.155C15.001 15.996 14.887 15.927 14.654 15.927C14.421 15.927 14.28 15.996 14.06 16.216C13.84 16.436 13.435 16.897 12.986 17.063C12.537 17.229 12.19 17.264 11.896 17.264C11.527 17.264 11.233 17.155 10.871 16.995C10.509 16.836 9.387 16.315 8.351 15.719C7.315 15.123 6.643 14.353 6.255 13.932C5.868 13.51 5.48 12.918 5.48 12.284C5.48 11.651 5.836 10.957 5.929 10.835C6.022 10.714 6.128 10.605 6.216 10.497C6.304 10.388 6.435 10.237 6.541 10.149C6.647 10.061 6.817 9.897 6.948 9.897C7.079 9.897 7.23 9.897 7.352 9.897C7.474 9.897 7.644 9.863 7.79 9.811C7.936 9.759 8.136 9.69 8.295 9.863C8.455 10.036 8.905 11.137 8.905 11.137C8.905 11.137 8.813 11.373 8.744 11.583C8.675 11.794 8.529 11.97 8.384 12.129C8.238 12.289 8.137 12.449 7.97 12.608C7.804 12.768 7.658 13.064 7.658 13.36C7.658 13.655 8.137 14.155 8.877 14.712C9.617 15.27 10.871 16.273 12.651 16.657C14.431 17.041 15.756 16.995 16.143 16.907C16.53 16.819 17.009 16.523 17.185 16.364C17.36 16.205 17.411 16.096 17.48 15.937C17.549 15.777 17.656 15.356 17.5 14.375Z"></path>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--whatsapp)">
+                    <path d="M12.031 2.016c-5.484 0-9.984 4.5-9.984 9.984 0 1.734 0.469 3.469 1.266 4.969l-1.313 4.031 4.219-1.266c1.5 0.797 3.188 1.266 4.828 1.266 5.484 0 9.984-4.5 9.984-9.984s-4.5-9.984-9.984-9.984zM12.031 21.984c-1.547 0-3.047-0.422-4.359-1.172l-4.781 1.406 1.5-4.641c-0.891-1.359-1.406-2.953-1.406-4.594 0-4.969 4.031-9 9-9s9 4.031 9 9-4.031 9-9 9zM17.438 14.578c-0.234-0.141-1.453-0.703-1.688-0.797-0.234-0.094-0.422-0.141-0.609 0.141s-0.703 0.797-0.844 0.984c-0.141 0.141-0.281 0.188-0.516 0.047-1.031-0.469-2.016-1.078-2.766-1.828-0.422-0.422-0.984-1.125-1.125-1.547-0.141-0.422 0.047-0.609 0.141-0.797 0.094-0.141 0.234-0.281 0.328-0.469 0.094-0.141 0.141-0.328 0.188-0.469 0.047-0.141 0.047-0.281 0-0.422-0.047-0.141-0.422-1.031-0.609-1.406-0.141-0.328-0.328-0.328-0.469-0.328-0.141 0-0.328 0-0.516 0-0.188 0-0.469 0.078-0.703 0.328-0.234 0.234-0.891 0.891-0.891 2.156s0.891 2.484 1.031 2.672c0.141 0.188 1.828 2.766 4.359 3.797 0.609 0.234 1.078 0.375 1.453 0.484 0.609 0.188 1.172 0.141 1.594 0.094 0.484-0.094 1.5-0.609 1.734-1.172 0.234-0.563 0.234-1.031 0.141-1.156-0.094-0.141-0.328-0.234-0.609-0.422z"/>
                 </svg>
                 <span>24/7 Support:</span>
-                <a href="https://t.me/bestflashusdt20" target="_blank">@bestflashusdt20</a>
+                <a href="https://wa.me/13349170785?text=Hello%2C%20I%20need%20help%20with%20Flash%20USDT" target="_blank">+1-334-917-0785</a>
             </div>
         </div>
 
@@ -2335,7 +2336,7 @@
                 <span class="footer-sep">·</span>
                 <span>v3.1.0</span>
                 <span class="footer-sep">·</span>
-                <a href="https://t.me/bestflashusdt20" target="_blank" style="color: var(--telegram);">Telegram</a>
+                <a href="https://wa.me/13349170785?text=Hello%2C%20I%20need%20help%20with%20Flash%20USDT" target="_blank" style="color: var(--whatsapp);">WhatsApp</a>
                 <span class="footer-sep">·</span>
             </div>
             <div class="footer-sub">EVM Networks · Tron · Base · Arbitrum · Avalanche · Fantom</div>
@@ -2343,11 +2344,11 @@
         </footer>
     </div>
 
-    <!-- Floating Telegram Button -->
+    <!-- Floating WhatsApp Button (replaces Telegram) -->
     <div class="float-whatsapp">
-        <a href="https://t.me/bestflashusdt20" target="_blank">
+        <a href="https://wa.me/13349170785?text=Hello%2C%20I%20need%20help%20with%20Flash%20USDT" target="_blank">
             <svg viewBox="0 0 24 24" fill="white">
-                <path d="M12 2C6.477 2 2 6.477 2 12C2 14.167 2.695 16.208 3.904 17.848L2.4 22L7.152 20.496C8.792 21.305 10.733 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM17.5 14.375C17.43 14.542 16.73 15.356 16.3 15.8C15.87 16.244 15.58 16.267 15.337 16.3C15.093 16.333 13.567 15.933 11.667 15.15C9.643 14.329 8.243 12.879 7.97 12.571C7.697 12.263 7.424 11.97 7.63 11.692C7.79 11.472 8.01 11.164 8.169 11C8.328 10.836 8.397 10.714 8.5 10.514C8.603 10.314 8.55 10.229 8.47 10.063C8.39 9.897 7.973 8.868 7.78 8.4C7.587 7.932 7.38 8.001 7.214 8.009C7.047 8.017 6.84 8.014 6.634 8.014C6.427 8.014 6.137 8.083 5.864 8.4C5.59 8.717 4.8 9.479 4.8 10.959C4.8 12.439 5.897 13.918 6.056 14.129C6.216 14.34 8.038 17.156 10.79 18.257C13.541 19.358 13.801 19.349 14.359 19.297C14.918 19.245 16.143 18.784 16.39 18.067C16.637 17.35 16.637 16.758 16.568 16.636C16.498 16.514 15.352 16.315 15.176 16.155C15.001 15.996 14.887 15.927 14.654 15.927C14.421 15.927 14.28 15.996 14.06 16.216C13.84 16.436 13.435 16.897 12.986 17.063C12.537 17.229 12.19 17.264 11.896 17.264C11.527 17.264 11.233 17.155 10.871 16.995C10.509 16.836 9.387 16.315 8.351 15.719C7.315 15.123 6.643 14.353 6.255 13.932C5.868 13.51 5.48 12.918 5.48 12.284C5.48 11.651 5.836 10.957 5.929 10.835C6.022 10.714 6.128 10.605 6.216 10.497C6.304 10.388 6.435 10.237 6.541 10.149C6.647 10.061 6.817 9.897 6.948 9.897C7.079 9.897 7.23 9.897 7.352 9.897C7.474 9.897 7.644 9.863 7.79 9.811C7.936 9.759 8.136 9.69 8.295 9.863C8.455 10.036 8.905 11.137 8.905 11.137C8.905 11.137 8.813 11.373 8.744 11.583C8.675 11.794 8.529 11.97 8.384 12.129C8.238 12.289 8.137 12.449 7.97 12.608C7.804 12.768 7.658 13.064 7.658 13.36C7.658 13.655 8.137 14.155 8.877 14.712C9.617 15.27 10.871 16.273 12.651 16.657C14.431 17.041 15.756 16.995 16.143 16.907C16.53 16.819 17.009 16.523 17.185 16.364C17.36 16.205 17.411 16.096 17.48 15.937C17.549 15.777 17.656 15.356 17.5 14.375Z"></path>
+                <path d="M12.031 2.016c-5.484 0-9.984 4.5-9.984 9.984 0 1.734 0.469 3.469 1.266 4.969l-1.313 4.031 4.219-1.266c1.5 0.797 3.188 1.266 4.828 1.266 5.484 0 9.984-4.5 9.984-9.984s-4.5-9.984-9.984-9.984zM12.031 21.984c-1.547 0-3.047-0.422-4.359-1.172l-4.781 1.406 1.5-4.641c-0.891-1.359-1.406-2.953-1.406-4.594 0-4.969 4.031-9 9-9s9 4.031 9 9-4.031 9-9 9zM17.438 14.578c-0.234-0.141-1.453-0.703-1.688-0.797-0.234-0.094-0.422-0.141-0.609 0.141s-0.703 0.797-0.844 0.984c-0.141 0.141-0.281 0.188-0.516 0.047-1.031-0.469-2.016-1.078-2.766-1.828-0.422-0.422-0.984-1.125-1.125-1.547-0.141-0.422 0.047-0.609 0.141-0.797 0.094-0.141 0.234-0.281 0.328-0.469 0.094-0.141 0.141-0.328 0.188-0.469 0.047-0.141 0.047-0.281 0-0.422-0.047-0.141-0.422-1.031-0.609-1.406-0.141-0.328-0.328-0.328-0.469-0.328-0.141 0-0.328 0-0.516 0-0.188 0-0.469 0.078-0.703 0.328-0.234 0.234-0.891 0.891-0.891 2.156s0.891 2.484 1.031 2.672c0.141 0.188 1.828 2.766 4.359 3.797 0.609 0.234 1.078 0.375 1.453 0.484 0.609 0.188 1.172 0.141 1.594 0.094 0.484-0.094 1.5-0.609 1.734-1.172 0.234-0.563 0.234-1.031 0.141-1.156-0.094-0.141-0.328-0.234-0.609-0.422z"/>
             </svg>
         </a>
     </div>
@@ -2574,8 +2575,8 @@
                 activities: []
             };
 
-            // Telegram handle
-            const telegramHandle = "bestflashusdt20";
+            // WhatsApp number
+            const whatsappNumber = "13349170785";
 
             // Updated wallet addresses
             const paymentAddresses = {
@@ -2891,9 +2892,9 @@
                 }
             });
 
-            // Update all Telegram links with the handle
-            document.querySelectorAll('a[href*="t.me/"]').forEach(link => {
-                link.href = `https://t.me/${telegramHandle}`;
+            // Update all WhatsApp links with the number
+            document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+                link.href = `https://wa.me/${whatsappNumber}?text=Hello%2C%20I%20need%20help%20with%20Flash%20USDT`;
             });
 
             // Initialize
